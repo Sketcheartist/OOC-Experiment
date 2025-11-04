@@ -1,34 +1,49 @@
 #include <iostream>
 using namespace std;
-
-class Distance {
+class Person 
+{
 public:
-    int feet, inch;
-
-    Distance(int f, int i) {
-        this->feet = f;   
-        this->inch = i;
-    }
-
-    void operator-() {
-        feet--;
-        inch--;
-        cout << "\nFeet & Inches (After Decrement): " 
-             << feet << " feet " << inch << " inches" << endl;
+    Person() 
+	{
+        cout << "Person's constructor called" << endl;
     }
 };
 
-int main() {
-    cout << "Name  : Samiksha Babasaheb Kamble\n";
-    cout << "Roll No : 60\n";
-    cout << "Class : S.Y. B. CSE\n";
-   
-    Distance d1(8, 9);
-    cout << "Initial Distance: " << d1.feet << " feet " << d1.inch << " inches" << endl;
+class Faculty : public Person 
+{
+public:
+    Faculty() 
+	{
+        cout << "Faculty's constructor called" << endl;
+    }
+};
 
-    -d1;  
+class Student : public Person 
+{
+public:
+    Student() 
+	{
+        cout << "Student's constructor called" << endl;
+    }
+};
 
+class TA : public Faculty, public Student 
+{
+public:
+    TA() 
+	{
+        cout << "TA's constructor called" << endl;
+    }
+};
+
+int main() 
+{
+    cout << "Name -: Samiksha Babasaheb Kamble" << endl;
+    cout << "Div  -: B" << endl;
+    cout << "Roll No -: 60" << endl;
+    cout << "-----------------------------" << endl;
+
+    TA ta; 
     return 0;
 }
-
 
