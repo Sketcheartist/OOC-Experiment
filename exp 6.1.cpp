@@ -73,9 +73,15 @@ int main()
     cout << "Div: B\n";
     cout << "Roll no.: 60\n";
     StudentResult str; 
+	int cnt,i;
     cout << "\n Enter No of Students You Want :";
-    str.accept_data();
-    str.display_data();
-    str.calculate();
+	cin>>cnt;
+	for(i=0;i<cnt;i++)
+		{
+		    str.accept_data();
+            str.display_data();
+            str.calculate();
+		}
     return 0;
 }
+
