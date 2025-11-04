@@ -1,38 +1,40 @@
 #include <iostream>
 using namespace std;
-
-class Rectangle {
-private:
-    double length;
-    double width;
-
+class Construct 
+{
 public:
-    Rectangle(): length(1.0), width(1.0) {}
-    Rectangle(double len, double wid): length(len), width(wid) {}
-    ~Rectangle() {
-        cout << "Rectangle object destroyed." << endl;
+    float area;
+
+    Construct() 
+	{
+        area = 0;
     }
-    double getLength() const { return length; }
-    double getWidth() const { return width; }
-    void setLength(double len) { length = len; }
-    void setWidth(double wid) { width = wid; }
-    double calculateArea() const { return length * width; }
-    double calculatePerimeter() const { return 2 * (length + width); }
+
+    Construct(int a, int b) 
+	{
+        area = a * b;
+    }
+
+    void disp() 
+	{
+        cout << "Area: " << area << endl;
+    }
 };
 
-int main() {
+int main() 
+{
+    cout << "Name -: Samiksha Babasaheb Kamble" << endl;
+    cout << "Div  -: B" << endl;
+    cout << "Roll No -: 60" << endl;
+    cout << "---------------------------" << endl << endl;
 
-    cout << "Name  : Samiksha Babasaheb Kamble\n";
-    cout << "Roll No : 60\n";
-    cout << "Class : S.Y. B. CSE\n";
-  
-    Rectangle rect(4.0, 40.0);
-    cout << "Rectangle properties:" << endl;
-    cout << "Length: " << rect.getLength() << endl;
-    cout << "Width: " << rect.getWidth() << endl;
-    cout << "Area: " << rect.calculateArea() << endl;
-    cout << "Perimeter: " << rect.calculatePerimeter() << endl;
- 
+    Construct o;        
+    Construct o2(10, 20); 
+
+    o.disp();
+    o2.disp();
+
     return 0;
 }
+
 
